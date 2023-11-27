@@ -47,8 +47,8 @@ a {
 }
 
 header .info-container {
-  display: flex;
   justify-content: space-between;
+  display: flex;
 }
 
 header .img-container {
@@ -60,6 +60,7 @@ header .img-container {
 
 header .img-container img {
   height: 110%;
+  width: 110%;
 }
 
 header .threads-info {
