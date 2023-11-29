@@ -120,10 +120,11 @@ header .threads-info {
 
 .feed-card .img-container img {
   height: 110%;
+  width: 110%;
 }
 
 .feed {
-  height: 400px;
+  height: 430px;
   overflow-y: scroll;
 }
 
@@ -159,3 +160,9 @@ input:focus {
               rgba(0, 0, 0, 0.09) 0 -3px 5px;
 }
 
+.write-icon {
+  fill: rgb(250, 250, 250);
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 170px;
+}

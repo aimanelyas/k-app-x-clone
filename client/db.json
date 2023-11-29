@@ -28,12 +28,12 @@
       "img": "https://i.imgur.com/OrcZCFS.jpg",
       "instagram_url": "https://www.instagram.com/missnurfatinnajiha/",
       "followers": [
-       {
-         "user_uuid": "f95ede60-d9b9-4137-b59c-a9d78fc77217"
-       },
-       {
-         "user_uuid": "39159151-fe6d-4309-926b-4a37966be5e7"
-       }
+        {
+          "user_uuid": "f95ede60-d9b9-4137-b59c-a9d78fc77217"
+        },
+        {
+          "user_uuid": "39159151-fe6d-4309-926b-4a37966be5e7"
+        }
       ]
     },
     {
@@ -46,9 +46,9 @@
       "img": "https://i.imgur.com/D29HsR4.jpg",
       "instagram_url": "https://www.instagram.com/kimirekonen99/",
       "followers": [
-       {
-         "user_uuid": "f95ede60-d9b9-4137-b59c-a9d78fc77217"
-       }
+        {
+          "user_uuid": "f95ede60-d9b9-4137-b59c-a9d78fc77217"
+        }
       ]
     }
   ],
@@ -56,54 +56,70 @@
     {
       "id": 1,
       "timestamp": "2023-11-26T08:22:43.136Z",
-      "threads_from": "f95ede60-d9b9-4137-b59c-a9d78fc77217",
-      "threads_to": null,
+      "thread_from": "f95ede60-d9b9-4137-b59c-a9d78fc77217",
+      "thread_to": null,
       "reply_to": null,
       "text": "Hello World",
-      "Likes": [
+      "likes": [
         {
           "user_uuid": "e3096bc3-2a51-4300-8b4f-6180b8b3a660"
         },
         {
           "user_uuid": "39159151-fe6d-4309-926b-4a37966be5e7"
+        },
+        {
+          "user_uuid": "f95ede60-d9b9-4137-b59c-a9d78fc77217"
         }
       ]
     },
     {
       "id": 2,
       "timestamp": "2023-11-26T08:40:43.136Z",
-      "threads_from": "f95ede60-d9b9-4137-b59c-a9d78fc77217",
-      "threads_to": null,
+      "thread_from": "f95ede60-d9b9-4137-b59c-a9d78fc77217",
+      "thread_to": null,
       "reply_to": null,
       "text": "awesome thread",
-      "Likes": []
+      "likes": [
+        {
+          "user_uuid": "f95ede60-d9b9-4137-b59c-a9d78fc77217"
+        }
+      ]
     },
     {
       "id": 3,
       "timestamp": "2023-11-26T08:55:43.136Z",
-      "threads_from": "f95ede60-d9b9-4137-b59c-a9d78fc77217",
-      "threads_to": null,
+      "thread_from": "f95ede60-d9b9-4137-b59c-a9d78fc77217",
+      "thread_to": null,
       "reply_to": null,
       "text": "another one!",
-      "Likes": []
+      "likes": []
     },
     {
       "id": 4,
       "timestamp": "2023-11-26T09:55:43.136Z",
-      "threads_from": "39159151-fe6d-4309-926b-4a37966be5e7",
-      "threads_to": null,
+      "thread_from": "e3096bc3-2a51-4300-8b4f-6180b8b3a660",
+      "thread_to": null,
       "reply_to": null,
       "text": "he is my shubenn!",
-      "Likes": []
+      "likes": []
     },
     {
-      "id":5,
+      "id": 5,
       "timestamp": "2023-11-26T09:55:43.136Z",
-      "threads_from": "f95ede60-d9b9-4137-b59c-a9d78fc77217",
-      "threads_to": "39159151-fe6d-4309-926b-4a37966be5e7",
+      "thread_from": "f95ede60-d9b9-4137-b59c-a9d78fc77217",
+      "thread_to": "e3096bc3-2a51-4300-8b4f-6180b8b3a660",
       "reply_to": 4,
       "text": "yes i am!",
-      "Likes": []
+      "likes": []
+    },
+    {
+      "id": 6,
+      "timestamp": "2023-11-29T12:25:17.073Z",
+      "thread_from": "e3096bc3-2a51-4300-8b4f-6180b8b3a660",
+      "thread_to": "f95ede60-d9b9-4137-b59c-a9d78fc77217",
+      "reply_to": 1,
+      "text": "hello!",
+      "likes": []
     }
   ]
 }

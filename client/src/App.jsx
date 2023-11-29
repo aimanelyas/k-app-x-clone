@@ -2,7 +2,8 @@ import { useEffect, useState } from "react"
 import Nav from "../components/Nav"
 import Header from "../components/Header"
 import Feed from "../components/Feed"
-// import PopUp from "../components/PopUp"
+import PopUp from "../components/PopUp"
+import WriteIcon from "../components/WriteIcon"
 
 const App = () => {
 
@@ -10,8 +11,11 @@ const App = () => {
   const [threads, setThreads] = useState(null)
   const [viewThreadsFeed, setViewThreadsFeed] = useState(true)
   const [filteredThreads, setFilteredThreads] = useState(null)
+  const [openPopUp, setOpenPopUp] = useState(false)
+  const [interactingThread, setInteractingThread ] = useState(null)
+  const [popUpFeedThreads, setPopUpFeedThreads] = useState(null)
 
-  const userId = "e3096bc3-2a51-4300-8b4f-6180b8b3a660"
+  const userId = "f95ede60-d9b9-4137-b59c-a9d78fc77217"
 
   const getUser = async () => {
     try {
@@ -25,7 +29,7 @@ const App = () => {
   
   const getThreads = async () => {
     try {
-      const response = await fetch (`http://localhost:3000/threads?thread_form=${userId}`)
+      const response = await fetch(`http://localhost:3000/threads?thread_from=${userId}`)
       const data = await response.json()
       setThreads(data)
     } catch (error) {
@@ -38,11 +42,26 @@ const App = () => {
       const standAloneThread = threads?.filter(thread => thread.reply_to === null)
       setFilteredThreads(standAloneThread)
     }
-    if (!viewThreadsFeed) {
+    if (!viewThreadsFeed) { 
       const replyThreads = threads?.filter(thread => thread.reply_to!== null)
       setFilteredThreads(replyThreads)
     }
   }
+
+  const getReplies = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/threads?reply_to=${interactingThread?.id}`)
+      const data = await response.json()
+      setPopUpFeedThreads(data)
+      
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect (() => {
+    getReplies()
+  }, [interactingThread])
 
   useEffect(() => {
     getUser()
@@ -53,7 +72,7 @@ const App = () => {
     getThreadsFeed()
   }, [user, threads, viewThreadsFeed])
 
-  console.log(filteredThreads)
+  console.log('popUpFeedThreads', popUpFeedThreads)
 
   return (
     <>
@@ -64,8 +83,21 @@ const App = () => {
         viewThreadsFeed={viewThreadsFeed}
         setViewThreadsFeed={setViewThreadsFeed}
         />
-        <Feed />
-        {/* <PopUp /> */}
+        <Feed 
+        user={user}
+        filteredThreads={filteredThreads}
+        setOpenPopUp={setOpenPopUp}
+        getThreads={getThreads}
+        setInteractingThread={setInteractingThread}
+        />
+        { openPopUp && 
+        <PopUp
+          setOpenPopUp={setOpenPopUp}
+          popUpFeedThreads={popUpFeedThreads}
+        />}
+        <div onClick={() => setOpenPopUp(true)}>
+          <WriteIcon />
+        </div>
       </div> }
     </>
   )
